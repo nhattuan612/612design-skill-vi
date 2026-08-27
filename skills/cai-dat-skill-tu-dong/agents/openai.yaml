@@ -1,4 +1,4 @@
 interface:
-  display_name: "Cài skill từ repo"
+  display_name: "📦 Cài skill từ repo"
   short_description: "Cài, Việt hoá và ghi nhớ skill từ link repo"
   default_prompt: "Cài skill từ repo GitHub theo quy trình đã lưu."

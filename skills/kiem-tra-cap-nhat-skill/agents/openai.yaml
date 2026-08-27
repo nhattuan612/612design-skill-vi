@@ -1,4 +1,4 @@
 interface:
-  display_name: "Kiểm tra và cập nhật skill"
+  display_name: "🔄 Kiểm tra và cập nhật skill"
   short_description: "Audit, so sánh và cập nhật skill an toàn"
   default_prompt: "Kiểm tra các skill đã cài và báo cáo bản cập nhật."
