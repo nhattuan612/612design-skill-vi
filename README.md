@@ -48,14 +48,17 @@ QLSVN được thiết kế để nâng cấp ổn định theo thời gian: ki�
 
 Không cần nhớ lệnh dài. Mô tả việc bạn muốn làm bằng tiếng Việt; skill sẽ hỏi phần còn thiếu, giải thích lựa chọn và chỉ thay đổi khi bạn xác nhận.
 
-## Bốn skill trong bộ này
+## Bảy skill trong bộ này
 
 | Icon | Skill | Dùng khi |
 | --- | --- | --- |
 | 📦 | `cai-dat-skill-tu-dong` | Bạn có link repo và muốn cài skill vào Codex. |
-| 🔄 | `kiem-tra-cap-nhat-skill` | Bạn muốn 🩺 kiểm tra sức khoẻ, cập nhật, reset, rollback hoặc 🧩 gộp skill an toàn. |
-| 🧭 | `so-sanh-va-chon-skill` | Bạn có nhiều repo, một task chưa rõ skill phù hợp hoặc muốn 🧬 quét skill trùng lặp. |
+| 🔄 | `kiem-tra-cap-nhat-skill` | Bạn muốn kiểm tra nguồn, cập nhật, reset hoặc rollback skill. |
+| 🧭 | `so-sanh-va-chon-skill` | Bạn có nhiều repo hoặc một task chưa rõ skill phù hợp. |
 | 📊 | `bang-quan-ly-kho-skill` | Bạn muốn nhìn toàn cảnh mọi skill đang có, nguồn nào rõ/chưa rõ và việc gì cần xử lý. |
+| 🩺 | `kiem-tra-suc-khoe-skill` | Bạn muốn biết skill nào khoẻ, cảnh báo hoặc hỏng. |
+| 🧬 | `quet-skill-trung-lap` | Bạn muốn tìm các skill có workflow trùng từ 80% trở lên. |
+| 🧩 | `hop-nhat-skill-an-toan` | Bạn đã chọn hai skill cần gộp và muốn backup, bản xem trước, kiểm tra trước khi archive. |
 
 ## Hình dung bằng tình huống thật
 
@@ -168,11 +171,13 @@ Muốn kiểm tra, cập nhật hoặc reset?
 📊 Bảng quản lý kho skill
 ```
 
-## Ba tính năng bảo trì nâng cao
+## Ba skill bảo trì độc lập
+
+Ba skill dưới đây được tách riêng, không nằm trong `🔄 Kiểm tra skill` hoặc `🧭 Chọn skill`. Vì vậy tên mỗi skill đúng chức năng và bạn gọi thẳng đúng việc cần làm.
 
 ### 🩺 Kiểm tra sức khoẻ skill
 
-Hãy hình dung kho skill như một tủ dụng cụ. Một cái búa bị gãy cán, một tuốc-nơ-vít thiếu đầu hay một ngăn không có nhãn đều làm công việc chậm đi. Chế độ này quét từng skill để kiểm tra YAML, tên mã, mô tả, metadata giao diện, reference, TODO và nội dung bắt buộc.
+Hãy hình dung kho skill như một tủ dụng cụ. Một cái búa bị gãy cán, một tuốc-nơ-vít thiếu đầu hay một ngăn không có nhãn đều làm công việc chậm đi. Skill này quét từng skill để kiểm tra YAML, tên mã, mô tả, metadata giao diện, reference, TODO và nội dung bắt buộc.
 
 Kết quả rất dễ đọc:
 
@@ -185,27 +190,27 @@ Kết quả rất dễ đọc:
 Ví dụ:
 
 ```text
-@kiem-tra-cap-nhat-skill
+@kiem-tra-suc-khoe-skill
 🩺 Kiểm tra sức khoẻ toàn bộ kho skill. Chỉ báo cáo, chưa sửa.
 ```
 
 ### 🧬 Quét skill trùng lặp từ 80%
 
-Hai skill có tên khác nhau chưa chắc làm việc khác nhau. Chế độ này so nội dung workflow của các `SKILL.md`, không chỉ nhìn tên. Nếu tỷ lệ trùng từ 80% trở lên, QLSVN sẽ đánh dấu là ứng viên xem xét; từ 60–79% là cần đọc kỹ; dưới 60% thường là khác biệt rõ.
+Hai skill có tên khác nhau chưa chắc làm việc khác nhau. Skill này so nội dung workflow của các `SKILL.md`, không chỉ nhìn tên. Nếu tỷ lệ trùng từ 80% trở lên, QLSVN sẽ đánh dấu là ứng viên xem xét; từ 60–79% là cần đọc kỹ; dưới 60% thường là khác biệt rõ.
 
 Ví dụ: một skill “review code” và một skill “kiểm tra chất lượng” đều yêu cầu review bảo mật, test, hiệu năng theo cùng thứ tự. QLSVN sẽ chỉ ra phần chung, nhưng cũng nêu nếu một bên có rule release riêng để bạn không gộp nhầm.
 
 ```text
-@so-sanh-va-chon-skill
+@quet-skill-trung-lap
 🧬 Quét toàn bộ kho skill, báo các cặp trùng lặp từ 80%.
 ```
 
 ### 🧩 Hợp nhất skill an toàn
 
-Gộp skill không phải là dán hai file vào nhau. Trước khi gộp, QLSVN cảnh báo phần có thể mất, backup cả hai skill, tạo **một skill mới** để xem trước và giữ nguyên hai skill gốc. Chỉ khi bạn xác nhận bản mới hoạt động, hai skill cũ mới được đánh dấu archive trong registry; chúng không bị xoá tự động.
+Gộp skill không phải là dán hai file vào nhau. Skill này cảnh báo phần có thể mất, backup cả hai skill, tạo **một skill mới** để xem trước và giữ nguyên hai skill gốc. Chỉ khi bạn xác nhận bản mới hoạt động, hai skill cũ mới được đánh dấu archive trong registry; chúng không bị xoá tự động.
 
 ```text
-@kiem-tra-cap-nhat-skill
+@hop-nhat-skill-an-toan
 🧩 Đề xuất gộp hai skill trùng lặp này. Tạo bản xem trước và backup, chưa archive bản cũ.
 ```
 

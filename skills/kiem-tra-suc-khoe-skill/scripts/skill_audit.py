@@ -91,6 +91,9 @@ def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--skills-dir", type=Path, default=codex_skills_dir())
     parser.add_argument("--threshold", type=float, default=80.0)
+    mode = parser.add_mutually_exclusive_group()
+    mode.add_argument("--health-only", action="store_true")
+    mode.add_argument("--duplicates-only", action="store_true")
     args = parser.parse_args()
 
     root = args.skills_dir.expanduser().resolve()
@@ -103,34 +106,41 @@ def main() -> int:
     bodies: dict[Path, str] = {}
     broken = 0
     warnings = 0
-    print(f"🩺 Kiểm tra sức khoẻ skill: {len(skill_files)} skill")
+    if not args.duplicates_only:
+        print(f"🩺 Kiểm tra sức khoẻ skill: {len(skill_files)} skill")
     for skill_file in skill_files:
         errors, notes, body = audit_skill(skill_file)
         bodies[skill_file] = body
         label = skill_file.parent.name
         if errors:
             broken += 1
-            print(f"🔴 Hỏng  {label}: {'; '.join(errors)}")
+            if not args.duplicates_only:
+                print(f"🔴 Hỏng  {label}: {'; '.join(errors)}")
         elif notes:
             warnings += 1
-            print(f"🟡 Cảnh báo  {label}: {'; '.join(notes)}")
-        else:
+            if not args.duplicates_only:
+                print(f"🟡 Cảnh báo  {label}: {'; '.join(notes)}")
+        elif not args.duplicates_only:
             print(f"🟢 Khỏe  {label}")
 
-    print(f"\n🧬 Quét skill trùng lặp từ {args.threshold:.0f}%")
     matches: list[tuple[float, Path, Path]] = []
-    for left, right in itertools.combinations(skill_files, 2):
-        score = similarity(bodies[left], bodies[right])
-        if score >= args.threshold:
-            matches.append((score, left, right))
-    if matches:
-        for score, left, right in sorted(matches, reverse=True):
-            print(f"🧬 {score:.1f}%  {left.parent.name} ↔ {right.parent.name}")
-    else:
-        print("Không có cặp nào vượt ngưỡng.")
+    if not args.health_only:
+        print(f"\n🧬 Quét skill trùng lặp từ {args.threshold:.0f}%")
+        for left, right in itertools.combinations(skill_files, 2):
+            score = similarity(bodies[left], bodies[right])
+            if score >= args.threshold:
+                matches.append((score, left, right))
+        if matches:
+            for score, left, right in sorted(matches, reverse=True):
+                print(f"🧬 {score:.1f}%  {left.parent.name} ↔ {right.parent.name}")
+        else:
+            print("Không có cặp nào vượt ngưỡng.")
 
-    print(f"\nTổng kết: {len(skill_files) - broken - warnings} khỏe, {warnings} cảnh báo, {broken} hỏng, {len(matches)} cặp trùng.")
-    return 1 if broken else 0
+    if not args.duplicates_only:
+        print(f"\nTổng kết: {len(skill_files) - broken - warnings} khỏe, {warnings} cảnh báo, {broken} hỏng.")
+    if not args.health_only:
+        print(f"Tổng cặp trùng: {len(matches)}.")
+    return 1 if broken and not args.duplicates_only else 0
 
 
 if __name__ == "__main__":

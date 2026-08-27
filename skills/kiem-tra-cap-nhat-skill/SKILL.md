@@ -1,38 +1,16 @@
 ---
 name: kiem-tra-cap-nhat-skill
-description: Kiểm tra chuyên sâu nguồn, phiên bản, thay đổi và độ lệch của các skill Codex đã cài; báo cáo trước, cập nhật có xác nhận, bảo toàn tuỳ biến Việt hoá và hỗ trợ rollback an toàn.
+description: Kiểm tra nguồn, phiên bản và độ lệch của skill Codex đã cài; báo cáo trước, cập nhật/reset/rollback có xác nhận và bảo toàn tuỳ biến Việt hoá.
 ---
 
 # Kiểm tra và cập nhật skill
 
-Kích hoạt khi người dùng yêu cầu kiểm tra, audit, đối chiếu, cập nhật, đồng bộ hoặc rollback skill đã cài. Skill này tập trung vào các skill có nguồn repo được ghi trong `${CODEX_HOME:-$HOME/.codex}/skill-sources.md` và các skill local có thể truy ra nguồn.
+Kích hoạt khi người dùng yêu cầu kiểm tra nguồn, version, thay đổi remote, cập nhật, reset hoặc rollback skill đã cài. Skill này tập trung vào các skill có nguồn repo được ghi trong `${CODEX_HOME:-$HOME/.codex}/skill-sources.md`. Với sức khoẻ, trùng lặp hoặc gộp, bàn giao lần lượt sang `🩺 Kiểm tra sức khoẻ skill`, `🧬 Quét skill trùng lặp từ 80%` và `🧩 Hợp nhất skill an toàn`.
 
 ## Chế độ làm việc
 
 - **Chỉ kiểm tra** là mặc định nếu người dùng nói kiểm tra, audit, xem có bản mới hoặc báo cáo. Không sửa file, không xoá và không cập nhật.
 - **Cập nhật** chỉ chạy khi người dùng nói rõ cập nhật, đồng bộ, nâng cấp hoặc xác nhận kết quả kiểm tra. Nếu báo cáo phát hiện thay đổi nhưng chưa có xác nhận, dừng ở báo cáo.
-- **🩺 Kiểm tra sức khoẻ skill** chạy chỉ đọc khi người dùng hỏi skill nào hỏng, kho skill có ổn không hoặc muốn audit sức khoẻ.
-- **🧩 Hợp nhất skill an toàn** chỉ chạy khi người dùng nói rõ muốn gộp các skill cụ thể hoặc chấp nhận một đề xuất gộp.
-
-## 🩺 Kiểm tra sức khoẻ skill
-
-1. Chạy `scripts/skill_audit.py` với thư mục skill Codex và ngưỡng trùng lặp `80`. Script chỉ đọc, kiểm tra frontmatter, slug, mô tả, nội dung trống, TODO, metadata UI và reference Markdown tương đối.
-2. Phân loại kết quả bằng tiếng Việt: `🟢 Khỏe`, `🟡 Cảnh báo`, `🔴 Hỏng`. Skill hỏng là lỗi cản trở Codex tải hoặc dùng skill; cảnh báo là thiếu metadata, reference, TODO hoặc vấn đề cần review.
-3. Với lỗi semantic mà script không thể biết, đọc `SKILL.md` và kiểm tra: phạm vi kích hoạt có rõ không, hướng dẫn có mâu thuẫn không, dependency/tool có còn tồn tại không và prompt mặc định có phù hợp không.
-4. Báo cặp trùng lặp từ `80%` trở lên nhưng không gọi chúng là “trùng hoàn toàn” chỉ dựa vào phần trăm. Xem phần nội dung riêng trước khi đề xuất gộp.
-5. Chế độ này không tự sửa, cài lại hoặc gộp skill. Chỉ nêu phương án sửa, cập nhật hoặc chuyển sang 🧩 sau khi người dùng chọn.
-
-## 🧩 Hợp nhất skill an toàn
-
-Chỉ đề xuất gộp khi hai skill có độ trùng lặp từ `80%` trở lên hoặc người dùng chỉ rõ chúng trùng vai trò.
-
-1. Hiển thị cảnh báo rủi ro: có thể mất điều kiện kích hoạt riêng, xung đột hướng dẫn, làm skill quá rộng hoặc làm hỏng link/resource. Nêu phần trùng và phần riêng của từng skill.
-2. Hỏi xác nhận rõ phạm vi: hai skill nguồn, tên skill mới, icon, mô tả và việc giữ hay archive bản cũ. Không tự chọn tên hay xoá bản cũ.
-3. Tạo backup phục hồi được cho **cả hai** skill, gồm `SKILL.md`, metadata UI và resources. Ghi đường dẫn backup, thời gian và nguồn vào sổ nguồn trước khi tạo bản hợp nhất.
-4. Tạo skill hợp nhất trong **thư mục mới**, không ghi đè hai skill gốc. Chỉ giữ các hướng dẫn chung một lần, giữ các phần riêng dưới điều kiện kích hoạt rõ ràng và không tự kết hợp các rule mâu thuẫn.
-5. Thêm ghi nhận nguồn trong sổ nguồn: hai skill cha, tỷ lệ trùng lặp, phần giữ lại, phần bỏ, backup và lý do gộp. Không cần sao chép toàn bộ nội dung cũ vào skill mới.
-6. Chạy lại 🩺 Kiểm tra sức khoẻ skill, kiểm tra YAML, slug, metadata, reference, prompt mặc định và đọc review phần merge. Nếu bất kỳ kiểm tra nào fail, giữ hai skill gốc và phục hồi hoặc bỏ bản hợp nhất.
-7. Sau khi người dùng xác nhận bản hợp nhất chạy đúng, chỉ **archive** hai skill gốc trong registry. Không xoá chúng trừ khi có lệnh xoá riêng.
 
 ## Quy trình kiểm tra chuyên sâu
 
@@ -52,7 +30,7 @@ Chỉ thực hiện sau khi người dùng xác nhận phạm vi cập nhật.
 1. Chốt phạm vi theo repo hoặc skill cụ thể. Nếu người dùng nói “cập nhật hết”, chỉ cập nhật các repo đã có trong sổ nguồn, không tự tìm và cài repo mới.
 2. Tải bản nguồn mới vào thư mục tạm riêng. Không ghi đè trực tiếp bản đang dùng và không xoá trước khi có bản thay thế đã kiểm tra.
 3. Tạo bản sao lưu phục hồi được của đúng các thư mục sắp thay đổi. Ghi đường dẫn backup và timestamp vào báo cáo; không dùng lệnh xoá đệ quy trên thư mục rộng.
-4. So sánh thay đổi lần cuối. Nếu có sửa local trong body, script, reference hoặc asset, không âm thầm ghi đè; báo xung đột và hỏi giữ local, nhận upstream hay chuyển sang 🧩 Hợp nhất skill an toàn.
+4. So sánh thay đổi lần cuối. Nếu có sửa local trong body, script, reference hoặc asset, không âm thầm ghi đè; báo xung đột và hỏi giữ local, nhận upstream hay bàn giao sang `🧩 Hợp nhất skill an toàn`.
 5. Cài hoặc thay thế bản upstream tối thiểu. Giữ key/prefix, chính sách icon và mapping icon đã lưu, sau đó áp dụng lại tên Việt hoá, icon và mô tả Việt hoá. Nếu upstream chưa có `agents/openai.yaml`, tạo metadata hiển thị theo tuỳ biến đã lưu. Không đổi nội dung body chỉ để “đồng bộ tên”.
 6. Cập nhật sổ nguồn với ref mới, ngày cập nhật, path, số lượng, fingerprint hoặc commit nếu có, tên/mô tả tuỳ biến và backup gần nhất.
 7. Xác minh sau cập nhật: mọi path đã chọn tồn tại, mỗi skill có `SKILL.md`, frontmatter YAML hợp lệ, tên hợp lệ và không trùng, mô tả còn đúng, resources tham chiếu tồn tại, policy không bị đổi ngoài ý muốn.
@@ -84,7 +62,7 @@ Chỉ thực hiện sau khi người dùng xác nhận phạm vi cập nhật.
 - Sổ nguồn thiếu hoặc cũ: không đoán im lặng; truy ra bằng link/path nếu có, rồi cập nhật sổ sau khi người dùng xác nhận.
 - Skill local có repo nguồn riêng nhưng registry chỉ có path local: đánh dấu `nguồn chưa liên kết`, yêu cầu hoặc đề xuất thêm URL, branch/ref và danh sách path trước khi update/reset.
 - Upstream xoá skill: không tự xoá bản local; chỉ đánh dấu `đã xoá upstream` và hỏi người dùng có muốn gỡ không.
-- Độ trùng lặp từ `80%` trở lên: báo `🧬 Trùng lặp cao`, kèm phần riêng và đề xuất 🧩 Hợp nhất skill an toàn; không tự merge.
+- Khi phát hiện trùng lặp: bàn giao `🧬 Quét skill trùng lặp từ 80%`; không tự đánh giá hay merge trong skill này.
 
 ## Báo cáo đầu ra
 
