@@ -48,13 +48,14 @@ SFKVN được thiết kế để nâng cấp ổn định theo thời gian: ki�
 
 Không cần nhớ lệnh dài. Mô tả việc bạn muốn làm bằng tiếng Việt; skill sẽ hỏi phần còn thiếu, giải thích lựa chọn và chỉ thay đổi khi bạn xác nhận.
 
-## Ba skill trong bộ này
+## Bốn skill trong bộ này
 
 | Icon | Skill | Dùng khi |
 | --- | --- | --- |
 | 📦 | `cai-dat-skill-tu-dong` | Bạn có link repo và muốn cài skill vào Codex. |
 | 🔄 | `kiem-tra-cap-nhat-skill` | Bạn muốn 🩺 kiểm tra sức khoẻ, cập nhật, reset, rollback hoặc 🧩 gộp skill an toàn. |
 | 🧭 | `so-sanh-va-chon-skill` | Bạn có nhiều repo, một task chưa rõ skill phù hợp hoặc muốn 🧬 quét skill trùng lặp. |
+| 📊 | `bang-quan-ly-kho-skill` | Bạn muốn nhìn toàn cảnh mọi skill đang có, nguồn nào rõ/chưa rõ và việc gì cần xử lý. |
 
 ## Hình dung bằng tình huống thật
 
@@ -124,6 +125,29 @@ Ví dụ:
 Kiểm tra repo team-skills. Chỉ báo cáo, chưa cập nhật.
 ```
 
+### 5. Kho skill đã nhiều, muốn biết cái nào là của mình và cái nào đang có vấn đề
+
+Bạn nói: “Lập bảng tất cả skill trong máy. Cho tôi biết skill nào từ repo ngoài, cái nào SFKVN đã Việt hoá, có cái nào hỏng, mất nguồn, lệch icon hay lâu chưa kiểm tra không.”
+
+Gọi `@bang-quan-ly-kho-skill`.
+
+Skill này tạo một bảng quản lý chỉ đọc: không tự sửa, cập nhật hay xoá. Nó tách rõ skill local, skill hệ thống, skill agent và skill plugin để số lượng không bị đánh đồng. Với mỗi skill local, SFKVN đối chiếu sổ nguồn đã lưu để hiển thị repo, tình trạng **nguyên gốc hay đã qua SFKVN**, sức khoẻ, key/icon và tín hiệu cần kiểm tra cập nhật.
+
+Ví dụ bảng rút gọn:
+
+| Skill | Nguồn | Cài đặt | Sức khoẻ | Brand | Cập nhật | Gợi ý |
+| --- | --- | --- | --- | --- | --- | --- |
+| `taste-skill-giao-dien-toi-gian` | `Leonxlnx/taste-skill` | 🟦 SFKVN đã chỉnh | 🟢 Khỏe | ✅ Đồng bộ | 🟢 3 ngày | Không cần |
+| `team-review` | Chưa rõ | ⚪ Chưa rõ | 🟢 Khỏe | — | ⚪ Chưa ghi nguồn | Ghi nguồn bằng 📦 |
+| `legacy-deploy` | `org/dev-skills` | ⚪ Nguyên gốc | 🔴 Hỏng | ✅ Đồng bộ | 🟡 Cần kiểm tra | Dùng 🔄 kiểm tra/sửa |
+
+Sau bảng là thống kê tổng số và phần đề xuất. Ví dụ: “2 skill chưa có nguồn”, “1 skill hỏng”, hoặc “5 skill lâu chưa kiểm tra remote”. Mỗi đề xuất chỉ dẫn đúng bước kế tiếp: 📦 để ghi nguồn, 🔄 để kiểm tra/sửa/cập nhật, 🧭 để so sánh hoặc phát hiện trùng lặp. Không có tín hiệu thì SFKVN nói kho đang ổn, không tạo việc cho có.
+
+```text
+@bang-quan-ly-kho-skill
+📊 Quét toàn bộ kho skill trong máy và trả về bảng quản lý. Chỉ báo cáo, chưa sửa gì.
+```
+
 ## Luồng sử dụng ngắn gọn
 
 ```text
@@ -138,6 +162,10 @@ Chưa biết chọn repo/skill?
 Muốn kiểm tra, cập nhật hoặc reset?
         ↓
 🔄 Kiểm tra và cập nhật skill
+        ↑
+        │  cần nhìn toàn cảnh, phát hiện mất nguồn/lệch brand/cảnh báo
+        │
+📊 Bảng quản lý kho skill
 ```
 
 ## Ba tính năng bảo trì nâng cao
@@ -209,7 +237,7 @@ Mọi câu hỏi, preview, bảng so sánh và báo cáo dùng tiếng Việt. I
 
 ## Cài bộ skill
 
-Trong Codex, bạn có thể gửi link repo này và yêu cầu cài. Nếu đã có công cụ cài skill, cài toàn bộ thư mục `skills/` để giữ đủ ba skill và metadata hiển thị.
+Trong Codex, bạn có thể gửi link repo này và yêu cầu cài. Nếu đã có công cụ cài skill, cài toàn bộ thư mục `skills/` để giữ đủ bốn skill và metadata hiển thị.
 
 ```text
 https://github.com/nhattuan612/skill-for-skill-vn
