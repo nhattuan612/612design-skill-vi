@@ -1,6 +1,50 @@
 # Skill for Skill VN
 
-Bộ 3 skill tiếng Việt giúp Codex quản lý chính các skill của nó: chọn đúng skill, cài đúng repo, rồi kiểm tra và cập nhật an toàn về sau.
+> **SFKVN (Skill for Skill VN)** giúp bạn quản lý và hệ thống hoá kho skill tốt hơn: chọn đúng skill, cài đúng repo, Việt hoá dễ dùng, rồi kiểm tra và nâng cấp an toàn về sau.
+
+## SFKVN đứng ở đâu trong kho skill của bạn?
+
+```text
+Nhiều repo skill trên GitHub
+        │
+        │  so sánh, chọn lọc, kiểm tra rủi ro
+        ▼
+🧭 SFKVN — Trung tâm quyết định
+        │
+        │  cài, Việt hoá, đặt icon, lưu nguồn
+        ▼
+📦 Kho skill Codex của bạn
+        │
+        │  audit, update, reset, rollback
+        ▼
+🔄 Kho skill luôn rõ nguồn và dễ bảo trì
+```
+
+SFKVN không thay thế các skill chuyên môn như UI, security hay testing. Nó đứng **trước và sau** chúng để bạn biết nên dùng skill nào, skill đó đến từ đâu, hiển thị ra sao và cập nhật thế nào.
+
+## Ba giá trị cốt lõi
+
+| Ý chính | SFKVN làm gì | Ý phụ quan trọng |
+| --- | --- | --- |
+| **🇻🇳 Việt hoá an toàn** | Đổi tên hiển thị, thêm icon và dịch mô tả sang tiếng Việt. | Mã `name`, nội dung hướng dẫn, path, dependency và logic gốc vẫn được giữ đúng chuẩn để không làm hư skill. |
+| **🧱 Ổn định khi nâng cấp** | Lưu repo nguồn, branch, skill path, key và icon. | Khi update/reset, SFKVN so sánh trước, backup đúng phạm vi, áp lại tuỳ biến tiếng Việt và chỉ báo hoàn tất sau khi kiểm tra YAML. |
+| **🗂️ Hệ thống hoá kho skill** | Gom thông tin repo, phân loại chức năng và đề xuất skill phù hợp với từng task. | Bạn không cần nhớ repo nào có gì hay cài trùng nhiều bản cho cùng một việc. |
+
+### Việt hoá có làm hư skill không?
+
+Không. SFKVN tách phần **dễ nhìn cho người dùng** khỏi phần **kỹ thuật mà Codex cần**:
+
+```text
+Tên hiển thị:  🎨 Agent skills UI giao diện
+Mã kỹ thuật:   agent-skills-ui-giao-dien
+Nội dung gốc:  giữ nguyên workflow và điều kiện kích hoạt
+```
+
+Icon chỉ nằm trong `display_name`, còn mã kỹ thuật luôn là slug không dấu. Vì vậy skill vẫn được Codex nhận diện ổn định, trong khi người dùng nhìn kho skill dễ hơn nhiều.
+
+### Nâng cấp theo thời gian có bị mất tuỳ biến không?
+
+SFKVN được thiết kế để nâng cấp ổn định theo thời gian: kiểm tra thay đổi trước, backup trước khi thay thế, sau đó áp lại tên tiếng Việt, mô tả, key và icon đã lưu. Mục tiêu là giữ **tính ổn định tuyệt đối cho phần tuỳ biến**, đồng thời vẫn nhận được cải tiến từ repo nguồn.
 
 Không cần nhớ lệnh dài. Mô tả việc bạn muốn làm bằng tiếng Việt; skill sẽ hỏi phần còn thiếu, giải thích lựa chọn và chỉ thay đổi khi bạn xác nhận.
 
