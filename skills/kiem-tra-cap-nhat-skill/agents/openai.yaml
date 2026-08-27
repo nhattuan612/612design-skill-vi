@@ -1,4 +1,4 @@
 interface:
-  display_name: "🔄 QLSVN · Cập nhật skill"
+  display_name: "🔄 QLSVN · Kiểm tra - Cập nhật - Reset"
   short_description: "Kiểm tra nguồn, cập nhật, reset và rollback skill"
   default_prompt: "Dùng $kiem-tra-cap-nhat-skill để kiểm tra nguồn hoặc cập nhật skill đã cài."
