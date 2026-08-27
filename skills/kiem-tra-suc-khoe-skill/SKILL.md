@@ -10,7 +10,7 @@ Kích hoạt khi người dùng hỏi skill nào hỏng, kho skill có ổn khô
 ## Cách chạy
 
 1. Xác định kho skill từ `CODEX_HOME`, mặc định `~/.codex/skills`.
-2. Chạy `python3 scripts/skill_audit.py --health-only`.
+2. Chạy `python3 "${CODEX_HOME:-$HOME/.codex}/skills/kiem-tra-suc-khoe-skill/scripts/skill_audit.py" --skills-dir "${CODEX_HOME:-$HOME/.codex}/skills" --health-only`.
 3. Đọc thêm `SKILL.md` khi kết quả cấu trúc chưa đủ để kết luận: phạm vi kích hoạt, hướng dẫn mâu thuẫn, dependency/tool không tồn tại hoặc prompt mặc định không phù hợp.
 
 ## Kết quả

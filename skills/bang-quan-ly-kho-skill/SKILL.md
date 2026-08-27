@@ -17,7 +17,7 @@ Kích hoạt khi người dùng muốn xem toàn bộ skill đã cài, lập b�
 ## Cách thực hiện
 
 1. Xác định thư mục Codex từ `CODEX_HOME`, mặc định `~/.codex`.
-2. Chạy `python3 scripts/inventory_skills.py`. Chỉ dùng `--local-only` khi người dùng chỉ cần kho `~/.codex/skills` để bảng gọn hơn.
+2. Chạy `python3 "${CODEX_HOME:-$HOME/.codex}/skills/bang-quan-ly-kho-skill/scripts/inventory_skills.py"`. Chỉ dùng `--local-only` khi người dùng chỉ cần kho `~/.codex/skills` để bảng gọn hơn.
 3. Trả về bảng Markdown theo đúng dữ liệu quét được, tối thiểu gồm: số thứ tự, tên skill, mô tả, nguồn, tình trạng cài đặt, sức khoẻ, brand, tín hiệu cập nhật và hành động gợi ý.
 4. Sau bảng phải có phần `Thống kê` với tổng skill, phân loại nguồn/cài đặt và số lượng xanh-vàng-đỏ.
 5. Sau thống kê phải có phần `Đề xuất`, chỉ liệt kê việc có tín hiệu: skill hỏng, cảnh báo, chưa ghi nguồn, lệch key/icon/brand, hoặc nguồn đã lâu chưa được kiểm tra. Nếu không có tín hiệu, nói rõ kho đang ổn và không bịa đề xuất.
@@ -38,5 +38,5 @@ Kích hoạt khi người dùng muốn xem toàn bộ skill đã cài, lập b�
 
 - Muốn sửa lỗi, cập nhật, reset hoặc rollback: bàn giao `🔄 Kiểm tra và cập nhật skill` sau khi người dùng xác nhận.
 - Skill mất nguồn: bàn giao `📦 Cài skill từ repo` để xác định repo và lưu registry.
-- Có nhiều skill cùng chức năng hoặc muốn gộp: bàn giao `🧭 So sánh và chọn skill` để quét trùng; chỉ gộp qua luồng backup an toàn của `🔄`.
+- Muốn tìm skill trùng: bàn giao `🧬 Quét skill trùng lặp từ 80%`. Muốn gộp hai skill đã chọn: bàn giao `🧩 Hợp nhất skill an toàn` để backup và tạo bản xem trước.
 - Không suy đoán repo nguồn từ tên thư mục. Gắn nhãn `chưa ghi nguồn` cho đến khi người dùng hoặc registry xác nhận.
