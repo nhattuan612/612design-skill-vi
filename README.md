@@ -56,9 +56,9 @@ Không cần nhớ lệnh dài. Mô tả việc bạn muốn làm bằng tiếng
 | 🔄 | `kiem-tra-cap-nhat-skill` | Bạn muốn kiểm tra nguồn, cập nhật, reset hoặc rollback skill. |
 | 🧭 | `so-sanh-va-chon-skill` | Bạn có nhiều repo hoặc một task chưa rõ skill phù hợp. |
 | 📊 | `bang-quan-ly-kho-skill` | Bạn muốn nhìn toàn cảnh mọi skill đang có, nguồn nào rõ/chưa rõ và việc gì cần xử lý. |
-| 🩺 | `kiem-tra-suc-khoe-skill` | Bạn muốn biết skill nào khoẻ, cảnh báo hoặc hỏng. |
-| 🧬 | `quet-skill-trung-lap` | Bạn muốn tìm các skill có workflow trùng từ 80% trở lên. |
-| 🧩 | `hop-nhat-skill-an-toan` | Bạn đã chọn hai skill cần gộp và muốn backup, bản xem trước, kiểm tra trước khi archive. |
+| 🩺 | `QLSVN · Kiểm tra sức khoẻ skill` | Bạn muốn biết skill nào khoẻ, cảnh báo hoặc hỏng. |
+| 🧬 | `QLSVN · Quét skill trùng lặp từ 80%` | Bạn muốn tìm các skill có workflow trùng từ 80% trở lên. |
+| 🧩 | `QLSVN · Hợp nhất skill an toàn` | Bạn đã chọn hai skill cần gộp và muốn backup, bản xem trước, kiểm tra trước khi archive. |
 
 ## Hình dung bằng tình huống thật
 
