@@ -26,7 +26,7 @@ Nhiều repo skill trên GitHub
 
 | Ý chính | 612 làm gì | Ý phụ quan trọng |
 | --- | --- | --- |
-| **🇻🇳 Việt hoá an toàn** | Đổi tên hiển thị, thêm icon và dịch mô tả sang tiếng Việt. | Mã `name`, nội dung hướng dẫn, path, dependency và logic gốc vẫn được giữ đúng chuẩn để không làm hư skill. |
+| **👍 Việt hoá an toàn** | Đổi tên hiển thị, thêm icon và dịch mô tả sang tiếng Việt. | Mã `name`, nội dung hướng dẫn, path, dependency và logic gốc vẫn được giữ đúng chuẩn để không làm hư skill. |
 | **🧱 Ổn định khi nâng cấp** | Lưu repo nguồn, branch, skill path, key và icon. | Khi update/reset, 612 so sánh trước, backup đúng phạm vi, áp lại tuỳ biến tiếng Việt và chỉ báo hoàn tất sau khi kiểm tra YAML. |
 | **🗂️ Hệ thống hoá kho skill** | Gom thông tin repo, phân loại chức năng và đề xuất skill phù hợp với từng task. | Bạn không cần nhớ repo nào có gì hay cài trùng nhiều bản cho cùng một việc. |
 
@@ -250,6 +250,24 @@ Cài toàn bộ skill trong repo này.
 ```
 
 Repo công khai; bạn có thể dùng link trên để cài trực tiếp.
+
+### Cài toàn bộ bằng Terminal
+
+Trong Terminal, copy toàn bộ lệnh dưới đây. Codex sẽ cài đủ 7 skill vào `~/.codex/skills`:
+
+```bash
+python3 "$HOME/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py" \
+  --repo nhattuan612/612design-skill-vi \
+  --path skills/cai-dat-skill-tu-dong \
+  --path skills/so-sanh-va-chon-skill \
+  --path skills/kiem-tra-cap-nhat-skill \
+  --path skills/bang-quan-ly-kho-skill \
+  --path skills/kiem-tra-suc-khoe-skill \
+  --path skills/quet-skill-trung-lap \
+  --path skills/hop-nhat-skill-an-toan
+```
+
+Nếu một skill đã có trong máy, công cụ sẽ dừng để tránh ghi đè. Khi đó dùng `🔄 612 · Kiểm tra - Cập nhật - Reset` để kiểm tra hoặc cập nhật có backup.
 
 ## Nguyên tắc an toàn
 
