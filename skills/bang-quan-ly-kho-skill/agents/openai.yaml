@@ -1,4 +1,4 @@
 interface:
-  display_name: "📊 Quản Lý Skill VN · Kho skill"
+  display_name: "📊 QLSVN · Kho skill"
   short_description: "Thống kê, phát hiện lỗi và đề xuất bảo trì kho skill"
   default_prompt: "Dùng $bang-quan-ly-kho-skill để quét kho skill và trả bảng tiếng Việt."

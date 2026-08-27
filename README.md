@@ -1,15 +1,15 @@
 # Quản Lý Skill VN
 
-> **QLSKVN (Quản Lý Skill VN)** giúp bạn quản lý và hệ thống hoá kho skill tốt hơn: chọn đúng skill, cài đúng repo, Việt hoá dễ dùng, rồi kiểm tra và nâng cấp an toàn về sau.
+> **QLSVN (Quản Lý Skill VN)** giúp bạn quản lý và hệ thống hoá kho skill tốt hơn: chọn đúng skill, cài đúng repo, Việt hoá dễ dùng, rồi kiểm tra và nâng cấp an toàn về sau.
 
-## QLSKVN đứng ở đâu trong kho skill của bạn?
+## QLSVN đứng ở đâu trong kho skill của bạn?
 
 ```text
 Nhiều repo skill trên GitHub
         │
         │  so sánh, chọn lọc, kiểm tra rủi ro
         ▼
-🧭 QLSKVN — Trung tâm quyết định
+🧭 QLSVN — Trung tâm quyết định
         │
         │  cài, Việt hoá, đặt icon, lưu nguồn
         ▼
@@ -20,19 +20,19 @@ Nhiều repo skill trên GitHub
 🔄 Kho skill luôn rõ nguồn và dễ bảo trì
 ```
 
-QLSKVN không thay thế các skill chuyên môn như UI, security hay testing. Nó đứng **trước và sau** chúng để bạn biết nên dùng skill nào, skill đó đến từ đâu, hiển thị ra sao và cập nhật thế nào.
+QLSVN không thay thế các skill chuyên môn như UI, security hay testing. Nó đứng **trước và sau** chúng để bạn biết nên dùng skill nào, skill đó đến từ đâu, hiển thị ra sao và cập nhật thế nào.
 
 ## Ba giá trị cốt lõi
 
-| Ý chính | QLSKVN làm gì | Ý phụ quan trọng |
+| Ý chính | QLSVN làm gì | Ý phụ quan trọng |
 | --- | --- | --- |
 | **🇻🇳 Việt hoá an toàn** | Đổi tên hiển thị, thêm icon và dịch mô tả sang tiếng Việt. | Mã `name`, nội dung hướng dẫn, path, dependency và logic gốc vẫn được giữ đúng chuẩn để không làm hư skill. |
-| **🧱 Ổn định khi nâng cấp** | Lưu repo nguồn, branch, skill path, key và icon. | Khi update/reset, QLSKVN so sánh trước, backup đúng phạm vi, áp lại tuỳ biến tiếng Việt và chỉ báo hoàn tất sau khi kiểm tra YAML. |
+| **🧱 Ổn định khi nâng cấp** | Lưu repo nguồn, branch, skill path, key và icon. | Khi update/reset, QLSVN so sánh trước, backup đúng phạm vi, áp lại tuỳ biến tiếng Việt và chỉ báo hoàn tất sau khi kiểm tra YAML. |
 | **🗂️ Hệ thống hoá kho skill** | Gom thông tin repo, phân loại chức năng và đề xuất skill phù hợp với từng task. | Bạn không cần nhớ repo nào có gì hay cài trùng nhiều bản cho cùng một việc. |
 
 ### Việt hoá có làm hư skill không?
 
-Không. QLSKVN tách phần **dễ nhìn cho người dùng** khỏi phần **kỹ thuật mà Codex cần**:
+Không. QLSVN tách phần **dễ nhìn cho người dùng** khỏi phần **kỹ thuật mà Codex cần**:
 
 ```text
 Tên hiển thị:  🎨 agent-skills-ui- Giao diện người dùng
@@ -44,7 +44,7 @@ Icon chỉ nằm trong `display_name`, còn mã kỹ thuật luôn là slug khô
 
 ### Nâng cấp theo thời gian có bị mất tuỳ biến không?
 
-QLSKVN được thiết kế để nâng cấp ổn định theo thời gian: kiểm tra thay đổi trước, backup trước khi thay thế, sau đó áp lại tên tiếng Việt có dấu, mô tả, key và icon đã lưu. Mục tiêu là giữ **tính ổn định tuyệt đối cho phần tuỳ biến**, đồng thời vẫn nhận được cải tiến từ repo nguồn.
+QLSVN được thiết kế để nâng cấp ổn định theo thời gian: kiểm tra thay đổi trước, backup trước khi thay thế, sau đó áp lại tên tiếng Việt có dấu, mô tả, key và icon đã lưu. Mục tiêu là giữ **tính ổn định tuyệt đối cho phần tuỳ biến**, đồng thời vẫn nhận được cải tiến từ repo nguồn.
 
 Không cần nhớ lệnh dài. Mô tả việc bạn muốn làm bằng tiếng Việt; skill sẽ hỏi phần còn thiếu, giải thích lựa chọn và chỉ thay đổi khi bạn xác nhận.
 
@@ -127,21 +127,21 @@ Kiểm tra repo team-skills. Chỉ báo cáo, chưa cập nhật.
 
 ### 5. Kho skill đã nhiều, muốn biết cái nào là của mình và cái nào đang có vấn đề
 
-Bạn nói: “Lập bảng tất cả skill trong máy. Cho tôi biết skill nào từ repo ngoài, cái nào QLSKVN đã Việt hoá, có cái nào hỏng, mất nguồn, lệch icon hay lâu chưa kiểm tra không.”
+Bạn nói: “Lập bảng tất cả skill trong máy. Cho tôi biết skill nào từ repo ngoài, cái nào QLSVN đã Việt hoá, có cái nào hỏng, mất nguồn, lệch icon hay lâu chưa kiểm tra không.”
 
 Gọi `@bang-quan-ly-kho-skill`.
 
-Skill này tạo một bảng quản lý chỉ đọc: không tự sửa, cập nhật hay xoá. Nó tách rõ skill local, skill hệ thống, skill agent và skill plugin để số lượng không bị đánh đồng. Với mỗi skill local, QLSKVN đối chiếu sổ nguồn đã lưu để hiển thị repo, tình trạng **nguyên gốc hay đã qua QLSKVN**, sức khoẻ, key/icon và tín hiệu cần kiểm tra cập nhật.
+Skill này tạo một bảng quản lý chỉ đọc: không tự sửa, cập nhật hay xoá. Nó tách rõ skill local, skill hệ thống, skill agent và skill plugin để số lượng không bị đánh đồng. Với mỗi skill local, QLSVN đối chiếu sổ nguồn đã lưu để hiển thị repo, tình trạng **nguyên gốc hay đã qua QLSVN**, sức khoẻ, key/icon và tín hiệu cần kiểm tra cập nhật.
 
 Ví dụ bảng rút gọn:
 
 | Skill | Nguồn | Cài đặt | Sức khoẻ | Brand | Cập nhật | Gợi ý |
 | --- | --- | --- | --- | --- | --- | --- |
-| `taste-skill-giao-dien-toi-gian` | `Leonxlnx/taste-skill` | 🟦 QLSKVN đã chỉnh | 🟢 Khỏe | ✅ Đồng bộ | 🟢 3 ngày | Không cần |
+| `taste-skill-giao-dien-toi-gian` | `Leonxlnx/taste-skill` | 🟦 QLSVN đã chỉnh | 🟢 Khỏe | ✅ Đồng bộ | 🟢 3 ngày | Không cần |
 | `team-review` | Chưa rõ | ⚪ Chưa rõ | 🟢 Khỏe | — | ⚪ Chưa ghi nguồn | Ghi nguồn bằng 📦 |
 | `legacy-deploy` | `org/dev-skills` | ⚪ Nguyên gốc | 🔴 Hỏng | ✅ Đồng bộ | 🟡 Cần kiểm tra | Dùng 🔄 kiểm tra/sửa |
 
-Sau bảng là thống kê tổng số và phần đề xuất. Ví dụ: “2 skill chưa có nguồn”, “1 skill hỏng”, hoặc “5 skill lâu chưa kiểm tra remote”. Mỗi đề xuất chỉ dẫn đúng bước kế tiếp: 📦 để ghi nguồn, 🔄 để kiểm tra/sửa/cập nhật, 🧭 để so sánh hoặc phát hiện trùng lặp. Không có tín hiệu thì QLSKVN nói kho đang ổn, không tạo việc cho có.
+Sau bảng là thống kê tổng số và phần đề xuất. Ví dụ: “2 skill chưa có nguồn”, “1 skill hỏng”, hoặc “5 skill lâu chưa kiểm tra remote”. Mỗi đề xuất chỉ dẫn đúng bước kế tiếp: 📦 để ghi nguồn, 🔄 để kiểm tra/sửa/cập nhật, 🧭 để so sánh hoặc phát hiện trùng lặp. Không có tín hiệu thì QLSVN nói kho đang ổn, không tạo việc cho có.
 
 ```text
 @bang-quan-ly-kho-skill
@@ -191,9 +191,9 @@ Ví dụ:
 
 ### 🧬 Quét skill trùng lặp từ 80%
 
-Hai skill có tên khác nhau chưa chắc làm việc khác nhau. Chế độ này so nội dung workflow của các `SKILL.md`, không chỉ nhìn tên. Nếu tỷ lệ trùng từ 80% trở lên, QLSKVN sẽ đánh dấu là ứng viên xem xét; từ 60–79% là cần đọc kỹ; dưới 60% thường là khác biệt rõ.
+Hai skill có tên khác nhau chưa chắc làm việc khác nhau. Chế độ này so nội dung workflow của các `SKILL.md`, không chỉ nhìn tên. Nếu tỷ lệ trùng từ 80% trở lên, QLSVN sẽ đánh dấu là ứng viên xem xét; từ 60–79% là cần đọc kỹ; dưới 60% thường là khác biệt rõ.
 
-Ví dụ: một skill “review code” và một skill “kiểm tra chất lượng” đều yêu cầu review bảo mật, test, hiệu năng theo cùng thứ tự. QLSKVN sẽ chỉ ra phần chung, nhưng cũng nêu nếu một bên có rule release riêng để bạn không gộp nhầm.
+Ví dụ: một skill “review code” và một skill “kiểm tra chất lượng” đều yêu cầu review bảo mật, test, hiệu năng theo cùng thứ tự. QLSVN sẽ chỉ ra phần chung, nhưng cũng nêu nếu một bên có rule release riêng để bạn không gộp nhầm.
 
 ```text
 @so-sanh-va-chon-skill
@@ -202,7 +202,7 @@ Ví dụ: một skill “review code” và một skill “kiểm tra chất lư
 
 ### 🧩 Hợp nhất skill an toàn
 
-Gộp skill không phải là dán hai file vào nhau. Trước khi gộp, QLSKVN cảnh báo phần có thể mất, backup cả hai skill, tạo **một skill mới** để xem trước và giữ nguyên hai skill gốc. Chỉ khi bạn xác nhận bản mới hoạt động, hai skill cũ mới được đánh dấu archive trong registry; chúng không bị xoá tự động.
+Gộp skill không phải là dán hai file vào nhau. Trước khi gộp, QLSVN cảnh báo phần có thể mất, backup cả hai skill, tạo **một skill mới** để xem trước và giữ nguyên hai skill gốc. Chỉ khi bạn xác nhận bản mới hoạt động, hai skill cũ mới được đánh dấu archive trong registry; chúng không bị xoá tự động.
 
 ```text
 @kiem-tra-cap-nhat-skill

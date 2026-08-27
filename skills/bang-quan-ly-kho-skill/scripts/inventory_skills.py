@@ -171,7 +171,7 @@ def install_state(item: Item) -> str:
         return "⚪ Chưa rõ"
     vietnamese = bool(re.search(r"[À-ỹ]", item.description))
     changed = vietnamese or (item.source.key and item.name.startswith(item.source.key)) or bool(item.source.icons.get(item.folder))
-    return "🟦 QLSKVN đã chỉnh" if changed else "⚪ Nguyên gốc"
+    return "🟦 QLSVN đã chỉnh" if changed else "⚪ Nguyên gốc"
 
 
 def brand(item: Item) -> str:
@@ -235,7 +235,7 @@ def print_report(items: list[Item], stale_days: int, local_only: bool) -> None:
     print("\n## Thống kê\n")
     print(f"- Tổng cộng: **{len(items)} skill**. Phân loại: " + ", ".join(f"{group} {count}" for group, count in sorted(groups.items())) + ".")
     print(f"- Sức khoẻ: 🟢 {healths['🟢']}, 🟡 {healths['🟡']}, 🔴 {healths['🔴']}.")
-    print(f"- Cài đặt: 🟦 QLSKVN {states['🟦']}, ⚪ nguyên gốc/chưa rõ {states['⚪']}, ⚙️ hệ thống {states['⚙️']}, 🧩 plugin {states['🧩']}, 🤖 agent {states['🤖']}.")
+    print(f"- Cài đặt: 🟦 QLSVN {states['🟦']}, ⚪ nguyên gốc/chưa rõ {states['⚪']}, ⚙️ hệ thống {states['⚙️']}, 🧩 plugin {states['🧩']}, 🤖 agent {states['🤖']}.")
 
     proposals: list[str] = []
     broken = [item for item in items if item.errors]

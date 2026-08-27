@@ -1,4 +1,4 @@
 interface:
-  display_name: "🔄 Quản Lý Skill VN · Kiểm tra skill"
+  display_name: "🔄 QLSVN · Kiểm tra skill"
   short_description: "Kiểm tra, cập nhật, reset và rollback skill"
   default_prompt: "Dùng $kiem-tra-cap-nhat-skill để kiểm tra các skill đã cài, chỉ báo cáo trước khi cập nhật."
