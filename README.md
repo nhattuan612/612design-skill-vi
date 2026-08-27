@@ -245,7 +245,7 @@ Mọi câu hỏi, preview, bảng so sánh và báo cáo dùng tiếng Việt. I
 Trong Codex, bạn có thể gửi link repo này và yêu cầu cài. Nếu đã có công cụ cài skill, cài toàn bộ thư mục `skills/` để giữ đủ bốn skill và metadata hiển thị.
 
 ```text
-https://github.com/nhattuan612/quan-ly-skill-vn
+https://github.com/nhattuan612/612design-skill-vi
 Cài toàn bộ skill trong repo này.
 ```
 
