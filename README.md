@@ -251,23 +251,13 @@ Cài toàn bộ skill trong repo này.
 
 Repo công khai; bạn có thể dùng link trên để cài trực tiếp.
 
-### Cài toàn bộ bằng Terminal
+### 📥 Cài đặt
 
-Trong Terminal, copy toàn bộ lệnh dưới đây. Codex sẽ cài đủ 7 skill vào `~/.codex/skills`:
+Trong Terminal, copy một lệnh dưới đây để tải toàn bộ repo gồm 7 skill về máy:
 
 ```bash
-python3 "$HOME/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py" \
-  --repo nhattuan612/612design-skill-vi \
-  --path skills/cai-dat-skill-tu-dong \
-  --path skills/so-sanh-va-chon-skill \
-  --path skills/kiem-tra-cap-nhat-skill \
-  --path skills/bang-quan-ly-kho-skill \
-  --path skills/kiem-tra-suc-khoe-skill \
-  --path skills/quet-skill-trung-lap \
-  --path skills/hop-nhat-skill-an-toan
+git clone https://github.com/nhattuan612/612design-skill-vi.git
 ```
-
-Nếu một skill đã có trong máy, công cụ sẽ dừng để tránh ghi đè. Khi đó dùng `🔄 612 · Kiểm tra - Cập nhật - Reset` để kiểm tra hoặc cập nhật có backup.
 
 ## Nguyên tắc an toàn
 
