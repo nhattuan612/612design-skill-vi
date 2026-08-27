@@ -4,11 +4,13 @@
 
 ## 📥 Cài đặt
 
-Trong Terminal, copy một lệnh dưới đây để tải toàn bộ repo gồm 7 skill về máy:
+Trong Terminal, copy một lệnh dưới đây để tải repo và cài đủ 7 skill vào Codex:
 
 ```bash
-git clone https://github.com/nhattuan612/612design-skill-vi.git
+git clone https://github.com/nhattuan612/612design-skill-vi.git && cd 612design-skill-vi && ./install.sh
 ```
+
+Trình cài đặt dừng trước khi ghi đè bất kỳ skill nào đã có. Skill sẽ khả dụng từ lượt chat Codex tiếp theo.
 
 ## 612 đứng ở đâu trong kho skill của bạn?
 
@@ -255,3 +257,7 @@ Mọi câu hỏi, preview, bảng so sánh và báo cáo dùng tiếng Việt. I
 - Luôn preview tên/icon khi cần thay đổi hiển thị.
 - Luôn backup đúng skill trước update hoặc rollback.
 - Không đưa registry cá nhân, token hay đường dẫn nhạy cảm vào repository.
+
+## License
+
+Phát hành theo giấy phép [MIT](LICENSE).
