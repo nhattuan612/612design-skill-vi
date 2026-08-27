@@ -1,4 +1,4 @@
 interface:
-  display_name: "📦 Cài skill từ repo"
-  short_description: "Cài, Việt hoá và ghi nhớ skill từ link repo"
-  default_prompt: "Cài skill từ repo GitHub theo quy trình đã lưu."
+  display_name: "📦 Quản Lý Skill VN · Cài skill từ repo"
+  short_description: "Cài skill, Việt hoá có dấu và lưu nguồn"
+  default_prompt: "Dùng $cai-dat-skill-tu-dong để cài skill, hỏi key và icon trước khi thực hiện."

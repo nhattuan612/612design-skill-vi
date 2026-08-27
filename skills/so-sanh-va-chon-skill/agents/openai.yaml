@@ -1,4 +1,4 @@
 interface:
-  display_name: "🧭 So sánh và chọn skill"
+  display_name: "🧭 Quản Lý Skill VN · Chọn skill"
   short_description: "So sánh repo và đề xuất skill phù hợp"
-  default_prompt: "Phân tích nhu cầu hoặc so sánh các repo để đề xuất skill phù hợp."
+  default_prompt: "Dùng $so-sanh-va-chon-skill để phân tích nhu cầu hoặc so sánh các repo."

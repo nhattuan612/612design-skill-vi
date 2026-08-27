@@ -69,7 +69,7 @@ Chỉ thực hiện sau khi người dùng xác nhận phạm vi cập nhật.
 ## Quy tắc Việt hoá và tương thích
 
 - Giữ key/prefix của repo trong mọi lần cập nhật, trừ khi người dùng yêu cầu đổi.
-- Tên skill dùng chữ thường, số và dấu gạch ngang, tối đa 63 ký tự; tên hiển thị có dạng `ICON + tên tiếng Việt` hoặc `key-mo-ta-ngan` khi không dùng icon.
+- Mã `name` dùng chữ thường, số và dấu gạch ngang, tối đa 63 ký tự; tên hiển thị dùng tiếng Việt có dấu. Khi có key, mẫu là `ICON + KEY + Tên tiếng Việt`; key luôn đứng trước tên, kể cả khi không dùng icon.
 - Icon chỉ nằm trong `agents/openai.yaml` ở `interface.display_name`, không nằm trong frontmatter `name`. Kiểm tra icon theo mapping đã lưu và phát hiện display name thiếu hoặc sai icon.
 - Mô tả phải bằng tiếng Việt, ngắn, phân biệt được skill và giữ nguyên khả năng, phạm vi, giới hạn, điều kiện kích hoạt.
 - Không dịch tên file, path, code, frontmatter key, tên dependency hoặc lệnh kỹ thuật.

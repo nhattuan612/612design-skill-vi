@@ -14,7 +14,7 @@ Kích hoạt khi người dùng gửi từ hai link repo trở lên để so sá
 3. Lập bảng đối chiếu theo repo và skill: số lượng, phạm vi, skill trùng, skill riêng, version/commit, tài liệu dùng chung, dependency, yêu cầu công cụ, giới hạn và dấu hiệu repo còn được duy trì.
 4. Phân loại kết quả thành `nên dùng`, `có thể dùng`, `không phù hợp` và nêu bằng chứng ngắn cho từng kết luận. Không chấm điểm giả với dữ liệu không kiểm chứng.
 5. Đề xuất một repo chính, repo phụ hoặc phương án kết hợp từng skill từ nhiều repo. Nêu rõ conflict tên, nội dung trùng, reference bị thiếu, license khác nhau và chi phí bảo trì.
-6. Liệt kê chính xác skill nên cài từ repo được chọn, key/prefix đề xuất và thứ tự cài.
+6. Liệt kê chính xác skill nên cài từ repo được chọn, key/prefix đề xuất và thứ tự cài; preview tên hiển thị tiếng Việt có dấu theo mẫu `KEY + Tên`, với key luôn đứng trước tên khi người dùng chọn dùng key.
 7. Đề xuất icon theo nhóm chức năng cho từng skill và hỏi người dùng muốn không dùng icon, dùng một icon chung hay tự chọn icon theo nhóm. Không sửa repo ở chế độ đề xuất.
 8. Dừng ở đề xuất và hỏi xác nhận. Sau khi người dùng chọn repo, skill và icon, chuyển sang `cai-dat-skill-tu-dong` để thực hiện cài.
 
@@ -49,7 +49,7 @@ Kích hoạt khi người dùng gửi từ hai link repo trở lên để so sá
 ## Giao tiếp và giao diện
 
 - Toàn bộ câu hỏi, lựa chọn, bảng so sánh và báo cáo dùng tiếng Việt.
-- Tên hiển thị có thể dùng icon để dễ nhận biết; mã `name` và tên gọi kỹ thuật vẫn giữ slug không dấu để Codex nhận diện ổn định.
+- Tên hiển thị dùng tiếng Việt có dấu và có thể dùng icon để dễ nhận biết; nếu có key thì hiển thị `ICON + KEY + Tên`. Mã `name` vẫn giữ slug không dấu để Codex nhận diện ổn định.
 - Hiển thị tối đa ba lựa chọn chính, luôn có lý do và tác động thực tế.
 - Không dùng popup giả bằng Markdown. Nếu môi trường có structured question trong Plan mode, ưu tiên cơ chế đó; nếu không, hỏi trực tiếp trong chat.
 
