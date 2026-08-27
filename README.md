@@ -1,15 +1,15 @@
-# Quản Lý Skill VN
+# 612Design Skill - Vi
 
-> **QLSVN (Quản Lý Skill VN)** giúp bạn quản lý và hệ thống hoá kho skill tốt hơn: chọn đúng skill, cài đúng repo, Việt hoá dễ dùng, rồi kiểm tra và nâng cấp an toàn về sau.
+> **612 (612Design Skill - Vi)** giúp bạn quản lý và hệ thống hoá kho skill tốt hơn: chọn đúng skill, cài đúng repo, Việt hoá dễ dùng, rồi kiểm tra và nâng cấp an toàn về sau.
 
-## QLSVN đứng ở đâu trong kho skill của bạn?
+## 612 đứng ở đâu trong kho skill của bạn?
 
 ```text
 Nhiều repo skill trên GitHub
         │
         │  so sánh, chọn lọc, kiểm tra rủi ro
         ▼
-🧭 QLSVN — Trung tâm quyết định
+🧭 612 — Trung tâm quyết định
         │
         │  cài, Việt hoá, đặt icon, lưu nguồn
         ▼
@@ -20,19 +20,19 @@ Nhiều repo skill trên GitHub
 🔄 Kho skill luôn rõ nguồn và dễ bảo trì
 ```
 
-QLSVN không thay thế các skill chuyên môn như UI, security hay testing. Nó đứng **trước và sau** chúng để bạn biết nên dùng skill nào, skill đó đến từ đâu, hiển thị ra sao và cập nhật thế nào.
+612 không thay thế các skill chuyên môn như UI, security hay testing. Nó đứng **trước và sau** chúng để bạn biết nên dùng skill nào, skill đó đến từ đâu, hiển thị ra sao và cập nhật thế nào.
 
 ## Ba giá trị cốt lõi
 
-| Ý chính | QLSVN làm gì | Ý phụ quan trọng |
+| Ý chính | 612 làm gì | Ý phụ quan trọng |
 | --- | --- | --- |
 | **🇻🇳 Việt hoá an toàn** | Đổi tên hiển thị, thêm icon và dịch mô tả sang tiếng Việt. | Mã `name`, nội dung hướng dẫn, path, dependency và logic gốc vẫn được giữ đúng chuẩn để không làm hư skill. |
-| **🧱 Ổn định khi nâng cấp** | Lưu repo nguồn, branch, skill path, key và icon. | Khi update/reset, QLSVN so sánh trước, backup đúng phạm vi, áp lại tuỳ biến tiếng Việt và chỉ báo hoàn tất sau khi kiểm tra YAML. |
+| **🧱 Ổn định khi nâng cấp** | Lưu repo nguồn, branch, skill path, key và icon. | Khi update/reset, 612 so sánh trước, backup đúng phạm vi, áp lại tuỳ biến tiếng Việt và chỉ báo hoàn tất sau khi kiểm tra YAML. |
 | **🗂️ Hệ thống hoá kho skill** | Gom thông tin repo, phân loại chức năng và đề xuất skill phù hợp với từng task. | Bạn không cần nhớ repo nào có gì hay cài trùng nhiều bản cho cùng một việc. |
 
 ### Việt hoá có làm hư skill không?
 
-Không. QLSVN tách phần **dễ nhìn cho người dùng** khỏi phần **kỹ thuật mà Codex cần**:
+Không. 612 tách phần **dễ nhìn cho người dùng** khỏi phần **kỹ thuật mà Codex cần**:
 
 ```text
 Tên hiển thị:  🎨 agent-skills-ui- Giao diện người dùng
@@ -44,7 +44,7 @@ Icon chỉ nằm trong `display_name`, còn mã kỹ thuật luôn là slug khô
 
 ### Nâng cấp theo thời gian có bị mất tuỳ biến không?
 
-QLSVN được thiết kế để nâng cấp ổn định theo thời gian: kiểm tra thay đổi trước, backup trước khi thay thế, sau đó áp lại tên tiếng Việt có dấu, mô tả, key và icon đã lưu. Mục tiêu là giữ **tính ổn định tuyệt đối cho phần tuỳ biến**, đồng thời vẫn nhận được cải tiến từ repo nguồn.
+612 được thiết kế để nâng cấp ổn định theo thời gian: kiểm tra thay đổi trước, backup trước khi thay thế, sau đó áp lại tên tiếng Việt có dấu, mô tả, key và icon đã lưu. Mục tiêu là giữ **tính ổn định tuyệt đối cho phần tuỳ biến**, đồng thời vẫn nhận được cải tiến từ repo nguồn.
 
 Không cần nhớ lệnh dài. Mô tả việc bạn muốn làm bằng tiếng Việt; skill sẽ hỏi phần còn thiếu, giải thích lựa chọn và chỉ thay đổi khi bạn xác nhận.
 
@@ -52,13 +52,13 @@ Không cần nhớ lệnh dài. Mô tả việc bạn muốn làm bằng tiếng
 
 | Icon | Skill | Dùng khi |
 | --- | --- | --- |
-| 📦 | `cai-dat-skill-tu-dong` | Bạn có link repo và muốn cài skill vào Codex. |
-| 🔄 | `QLSVN · Kiểm tra - Cập nhật - Reset` (`kiem-tra-cap-nhat-skill`) | Bạn muốn kiểm tra nguồn, cập nhật, reset hoặc rollback skill. |
-| 🧭 | `QLSVN · Chọn skill / So sánh` (`so-sanh-va-chon-skill`) | Bạn có nhiều repo hoặc một task chưa rõ skill phù hợp. |
-| 📊 | `bang-quan-ly-kho-skill` | Bạn muốn nhìn toàn cảnh mọi skill đang có, nguồn nào rõ/chưa rõ và việc gì cần xử lý. |
-| 🩺 | `QLSVN · Kiểm tra sức khoẻ skill` | Bạn muốn biết skill nào khoẻ, cảnh báo hoặc hỏng. |
-| 🧬 | `QLSVN · Quét skill trùng lặp từ 80%` | Bạn muốn tìm các skill có workflow trùng từ 80% trở lên. |
-| 🧩 | `QLSVN · Hợp nhất skill an toàn` | Bạn đã chọn hai skill cần gộp và muốn backup, bản xem trước, kiểm tra trước khi archive. |
+| 📦 | `612 · Cài skill từ repo` (`cai-dat-skill-tu-dong`) | Bạn có link repo và muốn cài skill vào Codex. |
+| 🔄 | `612 · Kiểm tra - Cập nhật - Reset` (`kiem-tra-cap-nhat-skill`) | Bạn muốn kiểm tra nguồn, cập nhật, reset hoặc rollback skill. |
+| 🧭 | `612 · Chọn skill / So sánh` (`so-sanh-va-chon-skill`) | Bạn có nhiều repo hoặc một task chưa rõ skill phù hợp. |
+| 📊 | `612 · Kho skill` (`bang-quan-ly-kho-skill`) | Bạn muốn nhìn toàn cảnh mọi skill đang có, nguồn nào rõ/chưa rõ và việc gì cần xử lý. |
+| 🩺 | `612 · Kiểm tra sức khoẻ skill` | Bạn muốn biết skill nào khoẻ, cảnh báo hoặc hỏng. |
+| 🧬 | `612 · Quét skill trùng lặp từ 80%` | Bạn muốn tìm các skill có workflow trùng từ 80% trở lên. |
+| 🧩 | `612 · Hợp nhất skill an toàn` | Bạn đã chọn hai skill cần gộp và muốn backup, bản xem trước, kiểm tra trước khi archive. |
 
 ## Hình dung bằng tình huống thật
 
@@ -130,21 +130,21 @@ Kiểm tra repo team-skills. Chỉ báo cáo, chưa cập nhật.
 
 ### 5. Kho skill đã nhiều, muốn biết cái nào là của mình và cái nào đang có vấn đề
 
-Bạn nói: “Lập bảng tất cả skill trong máy. Cho tôi biết skill nào từ repo ngoài, cái nào QLSVN đã Việt hoá, có cái nào hỏng, mất nguồn, lệch icon hay lâu chưa kiểm tra không.”
+Bạn nói: “Lập bảng tất cả skill trong máy. Cho tôi biết skill nào từ repo ngoài, cái nào 612 đã Việt hoá, có cái nào hỏng, mất nguồn, lệch icon hay lâu chưa kiểm tra không.”
 
 Gọi `@bang-quan-ly-kho-skill`.
 
-Skill này tạo một bảng quản lý chỉ đọc: không tự sửa, cập nhật hay xoá. Nó tách rõ skill local, skill hệ thống, skill agent và skill plugin để số lượng không bị đánh đồng. Với mỗi skill local, QLSVN đối chiếu sổ nguồn đã lưu để hiển thị repo, tình trạng **nguyên gốc hay đã qua QLSVN**, sức khoẻ, key/icon và tín hiệu cần kiểm tra cập nhật.
+Skill này tạo một bảng quản lý chỉ đọc: không tự sửa, cập nhật hay xoá. Nó tách rõ skill local, skill hệ thống, skill agent và skill plugin để số lượng không bị đánh đồng. Với mỗi skill local, 612 đối chiếu sổ nguồn đã lưu để hiển thị repo, tình trạng **nguyên gốc hay đã qua 612**, sức khoẻ, key/icon và tín hiệu cần kiểm tra cập nhật.
 
 Ví dụ bảng rút gọn:
 
 | Skill | Nguồn | Cài đặt | Sức khoẻ | Brand | Cập nhật | Gợi ý |
 | --- | --- | --- | --- | --- | --- | --- |
-| `taste-skill-giao-dien-toi-gian` | `Leonxlnx/taste-skill` | 🟦 QLSVN đã chỉnh | 🟢 Khỏe | ✅ Đồng bộ | 🟢 3 ngày | Không cần |
+| `taste-skill-giao-dien-toi-gian` | `Leonxlnx/taste-skill` | 🟦 612 đã chỉnh | 🟢 Khỏe | ✅ Đồng bộ | 🟢 3 ngày | Không cần |
 | `team-review` | Chưa rõ | ⚪ Chưa rõ | 🟢 Khỏe | — | ⚪ Chưa ghi nguồn | Ghi nguồn bằng 📦 |
 | `legacy-deploy` | `org/dev-skills` | ⚪ Nguyên gốc | 🔴 Hỏng | ✅ Đồng bộ | 🟡 Cần kiểm tra | Dùng 🔄 kiểm tra/sửa |
 
-Sau bảng là thống kê tổng số và phần đề xuất. Ví dụ: “2 skill chưa có nguồn”, “1 skill hỏng”, hoặc “5 skill lâu chưa kiểm tra remote”. Mỗi đề xuất chỉ dẫn đúng bước kế tiếp: 📦 để ghi nguồn, 🔄 để kiểm tra/sửa/cập nhật, 🧭 để so sánh hoặc phát hiện trùng lặp. Không có tín hiệu thì QLSVN nói kho đang ổn, không tạo việc cho có.
+Sau bảng là thống kê tổng số và phần đề xuất. Ví dụ: “2 skill chưa có nguồn”, “1 skill hỏng”, hoặc “5 skill lâu chưa kiểm tra remote”. Mỗi đề xuất chỉ dẫn đúng bước kế tiếp: 📦 để ghi nguồn, 🔄 để kiểm tra/sửa/cập nhật, 🧭 để so sánh hoặc phát hiện trùng lặp. Không có tín hiệu thì 612 nói kho đang ổn, không tạo việc cho có.
 
 ```text
 @bang-quan-ly-kho-skill
@@ -196,9 +196,9 @@ Ví dụ:
 
 ### 🧬 Quét skill trùng lặp từ 80%
 
-Hai skill có tên khác nhau chưa chắc làm việc khác nhau. Skill này so nội dung workflow của các `SKILL.md`, không chỉ nhìn tên. Nếu tỷ lệ trùng từ 80% trở lên, QLSVN sẽ đánh dấu là ứng viên xem xét; từ 60–79% là cần đọc kỹ; dưới 60% thường là khác biệt rõ.
+Hai skill có tên khác nhau chưa chắc làm việc khác nhau. Skill này so nội dung workflow của các `SKILL.md`, không chỉ nhìn tên. Nếu tỷ lệ trùng từ 80% trở lên, 612 sẽ đánh dấu là ứng viên xem xét; từ 60–79% là cần đọc kỹ; dưới 60% thường là khác biệt rõ.
 
-Ví dụ: một skill “review code” và một skill “kiểm tra chất lượng” đều yêu cầu review bảo mật, test, hiệu năng theo cùng thứ tự. QLSVN sẽ chỉ ra phần chung, nhưng cũng nêu nếu một bên có rule release riêng để bạn không gộp nhầm.
+Ví dụ: một skill “review code” và một skill “kiểm tra chất lượng” đều yêu cầu review bảo mật, test, hiệu năng theo cùng thứ tự. 612 sẽ chỉ ra phần chung, nhưng cũng nêu nếu một bên có rule release riêng để bạn không gộp nhầm.
 
 ```text
 @quet-skill-trung-lap

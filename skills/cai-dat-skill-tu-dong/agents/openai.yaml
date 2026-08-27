@@ -1,4 +1,4 @@
 interface:
-  display_name: "📦 QLSVN · Cài skill từ repo"
+  display_name: "📦 612 · Cài skill từ repo"
   short_description: "Cài skill, Việt hoá có dấu và lưu nguồn"
   default_prompt: "Dùng $cai-dat-skill-tu-dong để cài skill, hỏi key và icon trước khi thực hiện."

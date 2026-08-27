@@ -1,4 +1,4 @@
 interface:
-  display_name: "🩺 QLSVN · Kiểm tra sức khoẻ skill"
+  display_name: "🩺 612 · Kiểm tra sức khoẻ skill"
   short_description: "Kiểm tra lỗi cấu trúc và khả năng dùng skill"
   default_prompt: "Dùng $kiem-tra-suc-khoe-skill để kiểm tra toàn bộ kho skill, chỉ báo cáo."

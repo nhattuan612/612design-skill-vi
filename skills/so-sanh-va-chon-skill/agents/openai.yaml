@@ -1,4 +1,4 @@
 interface:
-  display_name: "🧭 QLSVN · Chọn skill / So sánh"
+  display_name: "🧭 612 · Chọn skill / So sánh"
   short_description: "Chọn skill hoặc so sánh repo phù hợp"
   default_prompt: "Dùng $so-sanh-va-chon-skill để phân tích nhu cầu hoặc so sánh các repo."

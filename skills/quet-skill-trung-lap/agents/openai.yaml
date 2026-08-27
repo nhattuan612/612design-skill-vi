@@ -1,4 +1,4 @@
 interface:
-  display_name: "🧬 QLSVN · Quét skill trùng lặp từ 80%"
+  display_name: "🧬 612 · Quét skill trùng lặp từ 80%"
   short_description: "Tìm skill có workflow trùng lặp cao"
   default_prompt: "Dùng $quet-skill-trung-lap để quét các skill trùng từ 80%, chỉ báo cáo."

@@ -1,4 +1,4 @@
 interface:
-  display_name: "🧩 QLSVN · Hợp nhất skill an toàn"
+  display_name: "🧩 612 · Hợp nhất skill an toàn"
   short_description: "Gộp skill có backup và bản xem trước"
   default_prompt: "Dùng $hop-nhat-skill-an-toan để đề xuất gộp skill, tạo backup và bản xem trước."

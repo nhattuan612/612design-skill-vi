@@ -11,7 +11,7 @@ Kích hoạt khi người dùng muốn xem toàn bộ skill đã cài, lập b�
 
 - Mặc định là **chỉ đọc**: không cài, cập nhật, reset, đổi tên, gộp hoặc xoá skill.
 - Quét kho skill Codex, thư mục skill của agent và skill từ plugin cache nếu có; phân loại rõ `Local`, `Hệ thống`, `Agent` hoặc `Plugin` để không nhầm skill người dùng cài với thành phần đi kèm Codex.
-- Đọc `${CODEX_HOME:-$HOME/.codex}/skill-sources.md` nếu có để nhận biết repo ngoài, nguồn GitHub, key/icon đã lưu và skill đã được QLSVN Việt hoá.
+- Đọc `${CODEX_HOME:-$HOME/.codex}/skill-sources.md` nếu có để nhận biết repo ngoài, nguồn GitHub, key/icon đã lưu và skill đã được 612 Việt hoá.
 - Không kiểm tra remote hay chạy script từ repo ngoài trong lượt thống kê. Trạng thái “cần kiểm tra cập nhật” là tín hiệu cần bàn giao sang skill `🔄 Kiểm tra và cập nhật skill`, không phải kết luận rằng remote chắc chắn có bản mới.
 
 ## Cách thực hiện
@@ -29,8 +29,8 @@ Kích hoạt khi người dùng muốn xem toàn bộ skill đã cài, lập b�
 | `🟢 Khỏe` | Đủ frontmatter, tên mã, mô tả và nội dung cơ bản. | Không cần làm gì. |
 | `🟡 Cảnh báo` | Vẫn dùng được nhưng có TODO, reference hoặc metadata cần xem. | Dùng `🔄` để kiểm tra/sửa có xác nhận. |
 | `🔴 Hỏng` | Thiếu thành phần cần thiết để dùng ổn định. | Không tự sửa; báo nguyên nhân và bàn giao `🔄`. |
-| `🟦 QLSVN đã chỉnh` | Có nguồn trong sổ và dấu hiệu tên/mô tả/icon Việt hoá QLSVN. | Bảo toàn tuỳ biến khi cập nhật/reset. |
-| `⚪ Nguyên gốc` | Có nguồn theo dõi nhưng chưa có dấu hiệu QLSVN chỉnh. | Theo dõi bình thường. |
+| `🟦 612 đã chỉnh` | Có nguồn trong sổ và dấu hiệu tên/mô tả/icon Việt hoá 612. | Bảo toàn tuỳ biến khi cập nhật/reset. |
+| `⚪ Nguyên gốc` | Có nguồn theo dõi nhưng chưa có dấu hiệu 612 chỉnh. | Theo dõi bình thường. |
 | `⚠️ Lệch brand` | Key hoặc icon đã lưu không khớp metadata hiện tại. | Xác nhận trước khi chuẩn hoá lại. |
 | `🟡 Cần kiểm tra` | Bản ghi nguồn đã quá mốc theo dõi, hoặc chưa có ngày ghi nhận. | Chạy kiểm tra remote bằng `🔄`. |
 
