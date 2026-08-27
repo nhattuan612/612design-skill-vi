@@ -2,6 +2,14 @@
 
 > **612 (612Design Skill - Vi)** giúp bạn quản lý và hệ thống hoá kho skill tốt hơn: chọn đúng skill, cài đúng repo, Việt hoá dễ dùng, rồi kiểm tra và nâng cấp an toàn về sau.
 
+## 📥 Cài đặt
+
+Trong Terminal, copy một lệnh dưới đây để tải toàn bộ repo gồm 7 skill về máy:
+
+```bash
+git clone https://github.com/nhattuan612/612design-skill-vi.git
+```
+
 ## 612 đứng ở đâu trong kho skill của bạn?
 
 ```text
@@ -239,25 +247,6 @@ Khi cài, bạn chọn một trong ba cách:
 Lựa chọn được lưu lại. Lần sau cài hoặc cập nhật cùng repo, Codex không hỏi lặp nếu bạn đã chọn chế độ mặc định.
 
 Mọi câu hỏi, preview, bảng so sánh và báo cáo dùng tiếng Việt. Icon chỉ dùng trong `display_name`; tên kỹ thuật của skill không có dấu và không có emoji để luôn tương thích Codex.
-
-## Cài bộ skill
-
-Trong Codex, bạn có thể gửi link repo này và yêu cầu cài. Nếu đã có công cụ cài skill, cài toàn bộ thư mục `skills/` để giữ đủ bảy skill và metadata hiển thị.
-
-```text
-https://github.com/nhattuan612/612design-skill-vi
-Cài toàn bộ skill trong repo này.
-```
-
-Repo công khai; bạn có thể dùng link trên để cài trực tiếp.
-
-### 📥 Cài đặt
-
-Trong Terminal, copy một lệnh dưới đây để tải toàn bộ repo gồm 7 skill về máy:
-
-```bash
-git clone https://github.com/nhattuan612/612design-skill-vi.git
-```
 
 ## Nguyên tắc an toàn
 
