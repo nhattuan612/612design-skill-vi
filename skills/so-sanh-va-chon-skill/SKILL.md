@@ -29,11 +29,19 @@ Kích hoạt khi người dùng gửi từ hai link repo trở lên để so sá
 7. Đề xuất icon hiển thị phù hợp với nhóm chức năng nếu skill chưa có icon; tôn trọng chính sách icon `ask|auto|off|custom` đã lưu và không thay đổi icon đang được người dùng lưu nếu chưa được hỏi.
 8. Hỏi người dùng xác nhận danh sách skill trước khi thực hiện task. Nếu người dùng đã chỉ rõ skill, chỉ kiểm tra tương thích và không ép chọn lại.
 
+## Chế độ C — 🧬 Quét skill trùng lặp từ 80%
+
+1. Khi người dùng hỏi skill nào trùng, chạy `../kiem-tra-cap-nhat-skill/scripts/skill_audit.py` trên thư mục skill Codex với ngưỡng `80`. Dùng phép đo theo nội dung hướng dẫn sau khi loại YAML frontmatter; không chỉ dựa vào tên hoặc mô tả.
+2. Báo ba mức bằng tiếng Việt: `🧬 Trùng lặp cao từ 80%`, `🔎 Có thể trùng từ 60–79%`, `🟢 Khác biệt rõ dưới 60%`. Với mức cao, chỉ ra phần chung và phần riêng trước khi kết luận.
+3. Loại trừ trường hợp chỉ cùng boilerplate, license, link hoặc câu hướng dẫn chung. Hai skill chỉ là ứng viên gộp khi phần workflow và điều kiện kích hoạt cũng trùng đáng kể.
+4. Đề xuất một trong ba hướng: giữ cả hai vì phần riêng quan trọng, đổi tên/phạm vi để rõ vai trò hoặc chuyển sang 🧩 Hợp nhất skill an toàn. Không tự merge hay archive.
+5. Mọi bảng, tỷ lệ, cảnh báo và lựa chọn dùng tiếng Việt; mã kỹ thuật chỉ xuất hiện khi người dùng cần gọi hoặc xác định đúng skill.
+
 ## Nguyên tắc quyết định
 
 - Không chọn repo chỉ vì có nhiều skill hơn; độ phù hợp và chất lượng quan trọng hơn số lượng.
 - Không cài trùng skill đã có nếu chưa so sánh nội dung và version.
-- Không gộp hai skill có cùng vai trò nếu một skill đã đủ dùng.
+- Không gộp hai skill có cùng vai trò nếu một skill đã đủ dùng; chỉ đề xuất gộp sau 🧬 Quét skill trùng lặp từ 80% và khi phần riêng không mâu thuẫn.
 - Không xem mô tả upstream là bằng chứng chất lượng; đọc nội dung thực và references liên quan.
 - Repo private, license không rõ, dependency mới hoặc script tự động đáng ngờ phải được đánh dấu rủi ro.
 - Khi không đủ dữ liệu, nói rõ chưa kết luận được và đề xuất kiểm tra tiếp theo.

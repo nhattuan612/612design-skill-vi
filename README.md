@@ -53,8 +53,8 @@ Không cần nhớ lệnh dài. Mô tả việc bạn muốn làm bằng tiếng
 | Icon | Skill | Dùng khi |
 | --- | --- | --- |
 | 📦 | `cai-dat-skill-tu-dong` | Bạn có link repo và muốn cài skill vào Codex. |
-| 🔄 | `kiem-tra-cap-nhat-skill` | Bạn muốn kiểm tra, cập nhật, reset hoặc rollback skill đã cài. |
-| 🧭 | `so-sanh-va-chon-skill` | Bạn có nhiều repo hoặc một task nhưng chưa biết nên dùng skill nào. |
+| 🔄 | `kiem-tra-cap-nhat-skill` | Bạn muốn 🩺 kiểm tra sức khoẻ, cập nhật, reset, rollback hoặc 🧩 gộp skill an toàn. |
+| 🧭 | `so-sanh-va-chon-skill` | Bạn có nhiều repo, một task chưa rõ skill phù hợp hoặc muốn 🧬 quét skill trùng lặp. |
 
 ## Hình dung bằng tình huống thật
 
@@ -138,6 +138,61 @@ Chưa biết chọn repo/skill?
 Muốn kiểm tra, cập nhật hoặc reset?
         ↓
 🔄 Kiểm tra và cập nhật skill
+```
+
+## Ba tính năng bảo trì nâng cao
+
+### 🩺 Kiểm tra sức khoẻ skill
+
+Hãy hình dung kho skill như một tủ dụng cụ. Một cái búa bị gãy cán, một tuốc-nơ-vít thiếu đầu hay một ngăn không có nhãn đều làm công việc chậm đi. Chế độ này quét từng skill để kiểm tra YAML, tên mã, mô tả, metadata giao diện, reference, TODO và nội dung bắt buộc.
+
+Kết quả rất dễ đọc:
+
+```text
+🟢 Khỏe      Skill đầy đủ và có thể dùng.
+🟡 Cảnh báo  Skill vẫn dùng được nhưng cần xem lại, ví dụ link reference thiếu.
+🔴 Hỏng      Skill thiếu phần bắt buộc hoặc có lỗi cản trở Codex tải/dùng.
+```
+
+Ví dụ:
+
+```text
+@kiem-tra-cap-nhat-skill
+🩺 Kiểm tra sức khoẻ toàn bộ kho skill. Chỉ báo cáo, chưa sửa.
+```
+
+### 🧬 Quét skill trùng lặp từ 80%
+
+Hai skill có tên khác nhau chưa chắc làm việc khác nhau. Chế độ này so nội dung workflow của các `SKILL.md`, không chỉ nhìn tên. Nếu tỷ lệ trùng từ 80% trở lên, SFKVN sẽ đánh dấu là ứng viên xem xét; từ 60–79% là cần đọc kỹ; dưới 60% thường là khác biệt rõ.
+
+Ví dụ: một skill “review code” và một skill “kiểm tra chất lượng” đều yêu cầu review bảo mật, test, hiệu năng theo cùng thứ tự. SFKVN sẽ chỉ ra phần chung, nhưng cũng nêu nếu một bên có rule release riêng để bạn không gộp nhầm.
+
+```text
+@so-sanh-va-chon-skill
+🧬 Quét toàn bộ kho skill, báo các cặp trùng lặp từ 80%.
+```
+
+### 🧩 Hợp nhất skill an toàn
+
+Gộp skill không phải là dán hai file vào nhau. Trước khi gộp, SFKVN cảnh báo phần có thể mất, backup cả hai skill, tạo **một skill mới** để xem trước và giữ nguyên hai skill gốc. Chỉ khi bạn xác nhận bản mới hoạt động, hai skill cũ mới được đánh dấu archive trong registry; chúng không bị xoá tự động.
+
+```text
+@kiem-tra-cap-nhat-skill
+🧩 Đề xuất gộp hai skill trùng lặp này. Tạo bản xem trước và backup, chưa archive bản cũ.
+```
+
+Luồng an toàn là:
+
+```text
+🧬 Phát hiện trùng lặp
+        ↓
+⚠️ Cảnh báo phần riêng và rủi ro
+        ↓
+💾 Backup hai skill gốc
+        ↓
+🧩 Tạo skill mới để xem trước
+        ↓
+🩺 Kiểm tra lại rồi mới archive bản cũ nếu bạn xác nhận
 ```
 
 ## Icon và tiếng Việt

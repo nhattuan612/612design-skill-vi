@@ -1,4 +1,4 @@
 interface:
   display_name: "🔄 Kiểm tra và cập nhật skill"
-  short_description: "Audit, so sánh và cập nhật skill an toàn"
-  default_prompt: "Kiểm tra các skill đã cài và báo cáo bản cập nhật."
+  short_description: "Kiểm tra sức khoẻ, cập nhật, gộp và rollback skill an toàn"
+  default_prompt: "🩺 Kiểm tra sức khoẻ các skill đã cài và báo cáo bằng tiếng Việt."
