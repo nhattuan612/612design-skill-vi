@@ -52,10 +52,10 @@ Không cần nhớ lệnh dài. Mô tả việc bạn muốn làm bằng tiếng
 
 | Icon | Skill | Dùng khi |
 | --- | --- | --- |
-| 📦 | `612 · Cài skill từ repo` (`cai-dat-skill-tu-dong`) | Bạn có link repo và muốn cài skill vào Codex. |
-| 🔄 | `612 · Kiểm tra - Cập nhật - Reset` (`kiem-tra-cap-nhat-skill`) | Bạn muốn kiểm tra nguồn, cập nhật, reset hoặc rollback skill. |
-| 🧭 | `612 · Chọn skill / So sánh` (`so-sanh-va-chon-skill`) | Bạn có nhiều repo hoặc một task chưa rõ skill phù hợp. |
-| 📊 | `612 · Kho skill` (`bang-quan-ly-kho-skill`) | Bạn muốn nhìn toàn cảnh mọi skill đang có, nguồn nào rõ/chưa rõ và việc gì cần xử lý. |
+| 📦 | `612 · Cài skill từ repo` | Bạn có link repo và muốn cài skill vào Codex. |
+| 🔄 | `612 · Kiểm tra - Cập nhật - Reset`| Bạn muốn kiểm tra nguồn, cập nhật, reset hoặc rollback skill. |
+| 🧭 | `612 · Chọn skill / So sánh` | Bạn có nhiều repo hoặc một task chưa rõ skill phù hợp. |
+| 📊 | `612 · Kho skill`| Bạn muốn nhìn toàn cảnh mọi skill đang có, nguồn nào rõ/chưa rõ và việc gì cần xử lý. |
 | 🩺 | `612 · Kiểm tra sức khoẻ skill` | Bạn muốn biết skill nào khoẻ, cảnh báo hoặc hỏng. |
 | 🧬 | `612 · Quét skill trùng lặp từ 80%` | Bạn muốn tìm các skill có workflow trùng từ 80% trở lên. |
 | 🧩 | `612 · Hợp nhất skill an toàn` | Bạn đã chọn hai skill cần gộp và muốn backup, bản xem trước, kiểm tra trước khi archive. |
@@ -140,9 +140,9 @@ Ví dụ bảng rút gọn:
 
 | Skill | Nguồn | Cài đặt | Sức khoẻ | Brand | Cập nhật | Gợi ý |
 | --- | --- | --- | --- | --- | --- | --- |
-| `taste-skill-giao-dien-toi-gian` | `Leonxlnx/taste-skill` | 🟦 612 đã chỉnh | 🟢 Khỏe | ✅ Đồng bộ | 🟢 3 ngày | Không cần |
+| `UI-skill-giao-dien-toi-gian` | `MEMEDESIGN/UUI-skill` | 🟦 612 đã chỉnh | 🟢 Khỏe | ✅ Đồng bộ | 🟢 3 ngày | Không cần |
 | `team-review` | Chưa rõ | ⚪ Chưa rõ | 🟢 Khỏe | — | ⚪ Chưa ghi nguồn | Ghi nguồn bằng 📦 |
-| `legacy-deploy` | `org/dev-skills` | ⚪ Nguyên gốc | 🔴 Hỏng | ✅ Đồng bộ | 🟡 Cần kiểm tra | Dùng 🔄 kiểm tra/sửa |
+| `legacy-deploy` | `org/MY-skills` | ⚪ Nguyên gốc | 🔴 Hỏng | ✅ Đồng bộ | 🟡 Cần kiểm tra | Dùng 🔄 kiểm tra/sửa |
 
 Sau bảng là thống kê tổng số và phần đề xuất. Ví dụ: “2 skill chưa có nguồn”, “1 skill hỏng”, hoặc “5 skill lâu chưa kiểm tra remote”. Mỗi đề xuất chỉ dẫn đúng bước kế tiếp: 📦 để ghi nguồn, 🔄 để kiểm tra/sửa/cập nhật, 🧭 để so sánh hoặc phát hiện trùng lặp. Không có tín hiệu thì 612 nói kho đang ổn, không tạo việc cho có.
 
